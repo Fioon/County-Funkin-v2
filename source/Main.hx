@@ -95,6 +95,8 @@ class Main extends Sprite
 			// if set to negative one, it is done so automatically, which is the default.
 		}
 
+		SUtil.check();
+
 		FlxTransitionableState.skipNextTransIn = true;
 
 		// here we set up the base game
@@ -161,7 +163,7 @@ class Main extends Sprite
 		}
 	}
 
-	function killCua(e:UncaughtErrorEvent):Void
+	/*function killCua(e:UncaughtErrorEvent):Void
 	{
 		var msg:String = "Cua SUCKS and county CRASHED here are the LOGS go FIX IT NUMBSKULL \n(Running on version 2.2)\n\n";
 		var stacks:Array<StackItem> = CallStack.exceptionStack(true);
@@ -190,6 +192,60 @@ class Main extends Sprite
 
 		Application.current.window.alert("Something went wrong!\n\nA report has been automatically sent into the County Funkin' development server.\n\nYou may also send a bug report via the County Funkin' twitter account.", "County Farted and Shat Itself");
 		//Discord.shutdownRPC();
+		Sys.exit(1);
+	}*/
+
+	function killCua(e:UncaughtErrorEvent):Void
+	{
+		var errMsg:String = "";
+		var path:String;
+		var callStack:Array<StackItem> = CallStack.exceptionStack(true);
+		var dateNow:String = Date.now().toString();
+
+		dateNow = StringTools.replace(dateNow, " ", "_");
+		dateNow = StringTools.replace(dateNow, ":", "'");
+
+		path = SUtil.getPath() + "crash/" + "FE_" + dateNow + ".txt";
+
+		for (stackItem in callStack)
+		{
+			switch (stackItem)
+			{
+				case FilePos(s, file, line, column):
+					errMsg += file + " (line " + line + ")\n";
+				default:
+					Sys.println(stackItem);
+			}
+		}
+
+		errMsg += "\nUncaught Error: " + e.error + "\nPlease report this error to the GitHub page: https://github.com/Yoshubs/Forever-Engine";
+
+		if (!FileSystem.exists(SUtil.getPath() + "crash/"))
+			FileSystem.createDirectory(SUtil.getPath() + "crash/");
+
+		File.saveContent(path, errMsg + "\n");
+
+		Sys.println(errMsg);
+		Sys.println("Crash dump saved in " + Path.normalize(path));
+
+		var crashDialoguePath:String = SUtil.getPath() + "FE-CrashDialog";
+
+		#if windows
+		crashDialoguePath += ".exe";
+		#end
+
+		if (FileSystem.exists(crashDialoguePath))
+		{
+			Sys.println("Found crash dialog: " + crashDialoguePath);
+			new Process(crashDialoguePath, [path]);
+		}
+		else
+		{
+			Sys.println("No crash dialog found! Making a simple alert instead...");
+			Application.current.window.alert(errMsg, "Error!");
+		}
+
+		Application.current.window.alert(errMsg, "Apk Error!");
 		Sys.exit(1);
 	}
 }
