@@ -126,7 +126,7 @@ class Paths
 
 	public static function returnGraphic(key:String, ?library:String, ?textureCompression:Bool = false)
 	{
-		var path = getPath('images/$key.png', IMAGE, library);
+		var path = SUtil.getPath() + getPath('images/$key.png', IMAGE, library);
 		if (FileSystem.exists(path))
 		{
 			if (!currentTrackedAssets.exists(key))
@@ -161,7 +161,7 @@ class Paths
 	public static function returnSound(path:String, key:String, ?library:String)
 	{
 		// I hate this so god damn much
-		var gottenPath:String = getPath('$path/$key.$SOUND_EXT', SOUND, library);
+		var gottenPath:String = SUtil.getPath() + getPath('$path/$key.$SOUND_EXT', SOUND, library);
 		gottenPath = gottenPath.substring(gottenPath.indexOf(':') + 1, gottenPath.length);
 		// trace(gottenPath);
 		if (!currentTrackedSounds.exists(gottenPath))
