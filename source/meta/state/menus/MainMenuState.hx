@@ -93,13 +93,14 @@ class MainMenuState extends MusicBeatState
 			});
 		}
 
-		var noises = new FlxSprite();
+		/*var noises = new FlxSprite();
 		noises.frames = Paths.getSparrowAtlas("county-sprites/main-menu/static");
 		noises.animation.addByPrefix("static", "static");
 		noises.animation.play("static");
 		noises.antialiasing = !Init.trueSettings.get('Disable Antialiasing');
 		noises.screenCenter();
 		add(noises);
+                */
 
 		var bg = new FlxSprite();
 		bg.makeGraphic(3000, 3000, 0xff0400F3); // blue????
