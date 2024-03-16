@@ -54,6 +54,7 @@ jobs:
           haxelib install flixel-ui
           haxelib install hscript
           haxelib install flixel-addons
+          haxelib install hxCodec 2.6.1
           haxelib install polymod
           haxelib install extension-androidtools 1.4.0      
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
