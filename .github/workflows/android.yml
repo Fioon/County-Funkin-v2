@@ -45,9 +45,9 @@ jobs:
         run: |
           haxelib setup ~/haxelib
           haxelib install hxcpp > /dev/null
-          haxelib install lime 7.9.0
-          haxelib install openfl 9.2.0
-          haxelib install flixel 5.5.0
+          haxelib install lime
+          haxelib install openfl
+          haxelib install flixel
           haxelib run lime setup flixel
           haxelib install flixel-tools
           haxelib run lime setup
@@ -55,7 +55,6 @@ jobs:
           haxelib install hscript
           haxelib install flixel-addons
           haxelib install hxCodec 2.6.1
-          haxelib install polymod
           haxelib install extension-androidtools 1.4.0      
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
           haxelib list
@@ -70,8 +69,8 @@ jobs:
           haxelib run lime config ANDROID_NDK_ROOT $ANDROID_NDK_HOME
           haxelib run lime config JAVA_HOME $JAVA_HOME
           haxelib run lime config ANDROID_SETUP true 
-          haxelib set lime 7.9.0
-          haxelib set openfl 9.2.0
+          haxelib set lime
+          haxelib set openfl
           
           haxelib list
         env:
