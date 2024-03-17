@@ -44,7 +44,7 @@ class Init extends FlxState
 
 	public static var gameSettings:Map<String, Dynamic> = [
 		'Downscroll' => [
-			false,
+			#if android true #else false #end,
 			Checkmark,
 			'Whether to have the strumline vertically flipped in gameplay.',
 			NOT_FORCED
@@ -164,6 +164,10 @@ class Init extends FlxState
 
 	override public function create():Void
 	{
+		#if android
+		FlxG.android.preventDefaultKeys = [BACK];
+		#end
+
 		FlxG.save.bind('County-Funkin');
 		Highscore.load();
 
