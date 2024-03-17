@@ -82,6 +82,7 @@ class StoryMenuState extends MusicBeatState
 		vignette.scrollFactor.set();
 		vignette.screenCenter();
 		add(vignette);
+                
 
 		var arrowLeft = new FlxText(10, 0, 0, "<", 35);
 		arrowLeft.scrollFactor.set();
@@ -98,13 +99,18 @@ class StoryMenuState extends MusicBeatState
 		arrowRight.camera = camINFO;
 		add(arrowRight);
 
-		noises = new FlxSprite();
+		/*noises = new FlxSprite();
 		noises.frames = Paths.getSparrowAtlas("county-sprites/story-menu/static");
 		noises.animation.addByPrefix("static", "static");
 		noises.animation.play("static");
 		noises.alpha = 0;
 		noises.camera = camINFO;
 		add(noises);
+                */
+
+		#if android
+		addVirtualPad(UP_DOWN, A_B);
+		#end
 
 		var vhsinfo = new VHSInfo();
 		vhsinfo.camera = camINFO;
