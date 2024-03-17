@@ -96,6 +96,11 @@ class Main extends Sprite
 		}
 
 		//SUtil.check();
+                #if android
+		gameWidth = 1280;
+		gameHeight = 720;
+		zoom = 1;
+		#end
 
 		FlxTransitionableState.skipNextTransIn = true;
 
@@ -116,7 +121,7 @@ class Main extends Sprite
 		// test initialising the player settings
 		PlayerSettings.init();
 
-		infoCounter = new Overlay(0, 0);
+		infoCounter = new Overlay(0, 90);
 		addChild(infoCounter);
 	}
 
