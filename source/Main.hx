@@ -95,7 +95,8 @@ class Main extends Sprite
 			// if set to negative one, it is done so automatically, which is the default.
 		}
 
-		//SUtil.check();
+		SUtil.check();
+		
                 #if android
 		gameWidth = 1280;
 		gameHeight = 720;
@@ -121,7 +122,7 @@ class Main extends Sprite
 		// test initialising the player settings
 		PlayerSettings.init();
 
-		infoCounter = new Overlay(0, 90);
+		infoCounter = new Overlay(50, 0);
 		addChild(infoCounter);
 	}
 
