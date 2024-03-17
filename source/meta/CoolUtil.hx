@@ -5,7 +5,7 @@ import meta.state.PlayState;
 
 using StringTools;
 
-#if windows
+#if sys
 import sys.FileSystem;
 #end
 
@@ -63,7 +63,7 @@ class CoolUtil
 	{
 		var libraryArray:Array<String> = [];
 
-		#if windows
+		#if sys
 		var unfilteredLibrary = FileSystem.readDirectory('$subDir/$library');
 
 		for (folder in unfilteredLibrary)
