@@ -137,6 +137,10 @@ class MainMenuState extends MusicBeatState
 		vignette.antialiasing = !Init.trueSettings.get('Disable Antialiasing');
 		add(vignette);
 
+		#if android
+		addVirtualPad(UP_DOWN, A_B);
+		#end
+
 		//
 		var moveVal:Float = 50;
 		var moveArrow:Void->Void;
