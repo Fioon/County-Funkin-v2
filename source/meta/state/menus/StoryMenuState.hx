@@ -144,9 +144,9 @@ class StoryMenuState extends MusicBeatState
 			selection = 0;
 		if (selection < 0)
 			selection = songList.length - 1;
-		noises.alpha = 1;
+		/*noises.alpha = 1;
 		FlxTween.cancelTweensOf(noises);
-		FlxTween.tween(noises, {alpha: 0}, 0.8);
+		FlxTween.tween(noises, {alpha: 0}, 0.8);*/
 	
 		songBanner.loadGraphic("assets/images/county-sprites/story-menu/storyframes/" + songList[selection].toLowerCase() + ".png");
 		songBanner.scale.set(1 / (songBanner.width / FlxG.width), 1 / (songBanner.height / FlxG.height));
