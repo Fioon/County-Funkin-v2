@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
 
+	<!-- _____________________________ Android Section ____________________________ -->
+	<define name="MOBILE_CONTROLS" if="android"/>
+	<assets path="assets/android"/>
+
+	<android target-sdk-version = "29"/>
 	<!-- _________________________ Application Settings _________________________ -->
 
 	<app title="County Funkin'" file="County Funkin'" packageName="com.yoshubs.foreverenginelegacy" package="com.yoshubs.foreverenginelegacy" main="Main" version="0.3.1" company="Yoshubs" />
@@ -64,7 +69,7 @@
 	<!-- ______________________________ Haxedefines _____________________________ -->
 
 	<!--Optimise inputs, be careful you will get null errors if you don't use conditionals in your game-->
-	<haxedef name="FLX_NO_TOUCH" if="desktop" />
+	<!--haxedef name="FLX_NO_TOUCH" if="desktop" /-->
 
 	<!--Disable the Flixel core focus lost screen-->
 	<haxedef name="FLX_NO_FOCUS_LOST_SCREEN" />
