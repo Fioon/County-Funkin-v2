@@ -99,13 +99,13 @@ class StoryMenuState extends MusicBeatState
 		arrowRight.camera = camINFO;
 		add(arrowRight);
 
-		noises = new FlxSprite();
+		/*noises = new FlxSprite();
 		noises.frames = SUtil.getPath() + Paths.getSparrowAtlas("county-sprites/story-menu/static");
 		noises.animation.addByPrefix("static", "static");
 		noises.animation.play("static");
 		noises.alpha = 0;
 		noises.camera = camINFO;
-		add(noises);
+		add(noises);*/
                 
 
 		#if android
