@@ -695,7 +695,7 @@ class CachingState extends MusicBeatState{
 										new FlxTimer().start(1, function(e:FlxTimer){
 											PlayState.isStoryMode = false;
 											PlayState.storyDifficulty = 2;
-											PlayState.SONG = Song.loadFromJson(songName.toLowerCase() + "-hard", songName.toLowerCase());
+											PlayState.SONG = Song.loadFromJson(songName.toLowerCase(), songName.toLowerCase());
 											Main.switchState(this, new PlayState());
 								   		});
 								    });
