@@ -122,9 +122,9 @@ class StoryMenuState extends MusicBeatState
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
-		if (Control.UI_LEFT)
+		if (controls.UI_LEFT)
 			switchSong(-1);
-		if (Control.UI_RIGHT)
+		if (controls.UI_RIGHT)
 			switchSong(1);
 		if (controls.BACK)
 			Main.switchState(this, new MainMenuState());
@@ -144,7 +144,7 @@ class StoryMenuState extends MusicBeatState
 			selection = 0;
 		if (selection < 0)
 			selection = songList.length - 1;
-		noises.alpha = 1;
+		/*noises.alpha = 1;
 		FlxTween.cancelTweensOf(noises);
 		FlxTween.tween(noises, {alpha: 0}, 0.8);*/
 	
