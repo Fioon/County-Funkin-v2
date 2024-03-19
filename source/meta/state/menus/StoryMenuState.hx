@@ -99,17 +99,17 @@ class StoryMenuState extends MusicBeatState
 		arrowRight.camera = camINFO;
 		add(arrowRight);
 
-		/*noises = new FlxSprite();
-		noises.frames = Paths.getSparrowAtlas("county-sprites/story-menu/static");
+		noises = new FlxSprite();
+		noises.frames = SUtil.getPath() + Paths.getSparrowAtlas("county-sprites/story-menu/static");
 		noises.animation.addByPrefix("static", "static");
 		noises.animation.play("static");
 		noises.alpha = 0;
 		noises.camera = camINFO;
 		add(noises);
-                */
+                
 
 		#if android
-		addVirtualPad(UP_DOWN, A_B);
+		addVirtualPad(LEFT_RIGHT, A_B);
 		#end
 
 		var vhsinfo = new VHSInfo();
@@ -122,9 +122,9 @@ class StoryMenuState extends MusicBeatState
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
-		if (controls.LEFT_P)
+		if (Control.UI_LEFT)
 			switchSong(-1);
-		if (controls.RIGHT_P)
+		if (Control.UI_RIGHT)
 			switchSong(1);
 		if (controls.BACK)
 			Main.switchState(this, new MainMenuState());
@@ -144,7 +144,7 @@ class StoryMenuState extends MusicBeatState
 			selection = 0;
 		if (selection < 0)
 			selection = songList.length - 1;
-		/*noises.alpha = 1;
+		noises.alpha = 1;
 		FlxTween.cancelTweensOf(noises);
 		FlxTween.tween(noises, {alpha: 0}, 0.8);*/
 	
