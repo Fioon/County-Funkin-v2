@@ -93,13 +93,14 @@ class MainMenuState extends MusicBeatState
 			});
 		}
 
-		var noises = new FlxSprite();
+		/*var noises = new FlxSprite();
 		noises.frames = SUtil.getPath() + Paths.getSparrowAtlas("county-sprites/main-menu/static");
 		noises.animation.addByPrefix("static", "static");
 		noises.animation.play("static");
 		noises.antialiasing = !Init.trueSettings.get('Disable Antialiasing');
 		noises.screenCenter();
 		add(noises);
+                */
                 
 
 		var bg = new FlxSprite();
@@ -173,12 +174,12 @@ class MainMenuState extends MusicBeatState
 		move.y = FlxMath.lerp(optionGroup[selection].getMidpoint().y + 15, move.y, 1 - Main.framerateAdjust(0.15));
 		if (openedMenu)
 		{
-			if (Control.UI_DOWN)
+			if (controls.UI_DOWN)
 			{
 				FlxG.sound.play(Paths.sound('scrollMenu'), 0.4);
 				selection += 1;
 			}
-			if (Control.UI_UP)
+			if (controls.UI_UP)
 			{
 				FlxG.sound.play(Paths.sound('scrollMenu'), 0.4);
 				selection -= 1;
