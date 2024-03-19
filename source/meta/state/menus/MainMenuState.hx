@@ -81,8 +81,7 @@ class MainMenuState extends MusicBeatState
 			new FlxTimer().start(2, function(e:FlxTimer)
 			{
 				FlxTween.tween(warning, {alpha: 1}, 1, {ease:FlxEase.sineInOut});
-				FlxG.sound.play(Paths.sound("county-sounds/inserttape"), 0.1);
-				new FlxTimer().start(5, function(e:FlxTimer)
+				FlxG.sound.play(Paths.sound("county-sounds/inserttape"), 0.1, false, null, true, function()
 				{
 					warning.visible = false;
 					camMAIN.visible = true;
