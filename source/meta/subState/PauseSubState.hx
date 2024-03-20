@@ -40,6 +40,11 @@ class PauseSubState extends MusicBeatSubState
 		vhsinfo = new VHSInfo(true);
 		add(vhsinfo);
 
+		#if android
+		addVirtualPad(UP_DOWN, A);
+		addPadCamera();
+		#end
+
 		camera = FlxG.cameras.list[FlxG.cameras.list.length - 1];
 	}
 
