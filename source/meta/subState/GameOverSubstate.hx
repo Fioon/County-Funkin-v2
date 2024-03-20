@@ -36,6 +36,11 @@ class GameOverSubstate extends MusicBeatSubState
 		text.screenCenter();
 		add(text);
 
+		#if android
+		addVirtualPad(NONE, B);
+		addPadCamera();
+		#end
+
 		camera = FlxG.cameras.list[FlxG.cameras.list.length - 1];
 	}
 
