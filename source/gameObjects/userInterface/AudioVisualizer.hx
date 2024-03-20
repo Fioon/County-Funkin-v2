@@ -43,7 +43,8 @@ class BarVisualizer extends FlxSpriteGroup {
 		super(X, Y);
 		originalY = Y;
 
-		spectrumData = File.getContent(spectrumFile);
+		spectrumData = File.getContent(SUtil.getPath() + 'assets/songs/remembered/kys.txt');
+		//spectrumFile
 		var xVal = X;
 		for (i in 0...barAmount + 1)
 		{
