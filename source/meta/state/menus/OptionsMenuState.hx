@@ -75,6 +75,7 @@ class OptionsMenuState extends MusicBeatState
 					['preferences', callNewGroup],
 					['appearance', callNewGroup],
 					['controls', openControlmenu],
+					#if android ['android controls', openAndroidControlmenu],#end
 					['exit', exitMenu]
 				]
 			],
@@ -162,6 +163,10 @@ class OptionsMenuState extends MusicBeatState
 		vhsinfo = new VHSInfo();
 		vhsinfo.camera = camINFO;
 		add(vhsinfo);
+
+		#if android
+		addVirtualPad(LEFT_FULL, A_B);
+		#end
 	}
 
 	private var currentAttachmentMap:Map<Alphabet, Dynamic>;
