@@ -362,6 +362,10 @@ class PlayState extends MusicBeatState
 		dialogueHUD.bgColor.alpha = 0;
 		FlxG.cameras.add(dialogueHUD, false);
 
+		#if android
+		addAndroidControls();
+		#end
+
 		//
 		keysArray = [
 			copyKey(Init.gameControls.get('LEFT')[0]),
@@ -554,7 +558,7 @@ class PlayState extends MusicBeatState
 		if (!inCutscene)
 		{
 			// pause the game if the game is allowed to pause and enter is pressed
-			if (FlxG.keys.justPressed.ENTER && startedCountdown && canPause)
+			if (FlxG.android.justReleased.BACK && startedCountdown && canPause)
 			{
 				pauseGame();
 			}
@@ -1651,6 +1655,9 @@ class PlayState extends MusicBeatState
 
 	function endSong():Void
 	{
+		#if android
+		androidControls.visible = false;
+		#end
 		canPause = false;
 		ForeverTools.killMusic([songMusic, vocals]);
 		if (SONG.validScore)
