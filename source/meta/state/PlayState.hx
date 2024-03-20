@@ -1729,6 +1729,9 @@ class PlayState extends MusicBeatState
 	private function startCountdown():Void
 	{
 		inCutscene = false;
+		#if android
+		androidControls.visible = true;
+		#end
 		startedCountdown = true;
 		charactersDance(curBeat);
 		Conductor.songPosition = -(Conductor.crochet * 1);
