@@ -363,7 +363,7 @@ class PlayState extends MusicBeatState
 		FlxG.cameras.add(dialogueHUD, false);
 
 		#if android
-		addAndroidControls();
+		//addAndroidControls();
 		#end
 
 		//
@@ -1656,7 +1656,7 @@ class PlayState extends MusicBeatState
 	function endSong():Void
 	{
 		#if android
-		androidControls.visible = false;
+		//androidControls.visible = false;
 		#end
 		canPause = false;
 		ForeverTools.killMusic([songMusic, vocals]);
@@ -1730,7 +1730,7 @@ class PlayState extends MusicBeatState
 	{
 		inCutscene = false;
 		#if android
-		androidControls.visible = true;
+		//androidControls.visible = true;
 		#end
 		startedCountdown = true;
 		charactersDance(curBeat);
