@@ -36,11 +36,14 @@ class AndroidControlsSubState extends FlxSubState
 	var bindButton:FlxButton;
 	var resetButton:FlxButton;
 
-	var vhsinfo:VHSInfo;
+	//var vhsinfo:VHSInfo;
 
 	override function create()
 	{
 		curSelected = AndroidControls.getMode();
+
+		var camShader = new FlxCamera();
+		camShader.bgColor.alpha = 0;
 
 		var bg = new FlxSprite(-85);
 		bg.loadGraphic(Paths.image('menus/base/menuDesat'));
@@ -134,8 +137,10 @@ class AndroidControlsSubState extends FlxSubState
 
 		changeSelection();
 
-		vhsinfo = new VHSInfo(true);
-		add(vhsinfo);
+		//vhsinfo = new VHSInfo(true);
+		//add(vhsinfo);
+
+		camShader.filters = [ShaderObject.getShader("vhs")];
 
 		super.create();
 	}
