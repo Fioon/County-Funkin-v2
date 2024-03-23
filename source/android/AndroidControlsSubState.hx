@@ -1,5 +1,8 @@
 package android;
 
+import gameObjects.userInterface.vhsinfo.VHSInfo;
+import shaders.ShaderObject;
+
 import android.flixel.FlxButton;
 import android.flixel.FlxHitbox;
 import android.flixel.FlxVirtualPad;
@@ -32,6 +35,8 @@ class AndroidControlsSubState extends FlxSubState
 	var buttonBinded:Bool = false;
 	var bindButton:FlxButton;
 	var resetButton:FlxButton;
+
+	var vhsinfo:VHSInfo;
 
 	override function create()
 	{
@@ -128,6 +133,9 @@ class AndroidControlsSubState extends FlxSubState
 		add(upPozition);
 
 		changeSelection();
+
+		vhsinfo = new VHSInfo(true);
+		add(vhsinfo);
 
 		super.create();
 	}
