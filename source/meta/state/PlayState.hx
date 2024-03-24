@@ -663,7 +663,7 @@ class PlayState extends MusicBeatState
 				health = 0;
 			}
 
-			if (health <= 0 && startedCountdown)
+			/*if (health <= 0 && startedCountdown)
 			{
 				paused = true;
 				// startTimer.active = false;
@@ -682,7 +682,7 @@ class PlayState extends MusicBeatState
 				#if DISCORD_RPC
 				Discord.changePresence("Game Over - " + songDetails, detailsSub, iconRPC);
 				#end
-			}
+			}*/
 
 			// spawn in the notes from the array
 			if ((unspawnNotes[0] != null) && ((unspawnNotes[0].strumTime - Conductor.songPosition) < 3500))
