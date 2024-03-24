@@ -84,7 +84,7 @@ class MusicBeatState extends FNFUIState
 		var camControls = new flixel.FlxCamera();
 		FlxG.cameras.add(camControls);
 		camControls.bgColor.alpha = 0;
-		FlxG.cameras.setDefaultDrawTarget(canControls, false);
+		FlxG.cameras.setDefaultDrawTarget(camControls, false);
 
 		androidControls.cameras = [camControls];
 		androidControls.visible = false;
@@ -108,7 +108,7 @@ class MusicBeatState extends FNFUIState
 			FlxG.cameras.add(camControls);
 			camControls.bgColor.alpha = 0;
 			virtualPad.cameras = [camControls];
-			FlxG.cameras.setDefaultDrawTarget(canControls, false);
+			FlxG.cameras.setDefaultDrawTarget(camControls, false);
 		}
 	}
 	#end
@@ -275,7 +275,7 @@ class MusicBeatSubState extends FlxSubState
 			FlxG.cameras.add(camControls);
 			camControls.bgColor.alpha = 0;
 			virtualPad.cameras = [camControls];
-			FlxG.cameras.setDefaultDrawTarget(canControls, false);
+			FlxG.cameras.setDefaultDrawTarget(camControls, false);
 		}
 	}
 	#end
