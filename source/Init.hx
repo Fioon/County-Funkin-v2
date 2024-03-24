@@ -44,13 +44,13 @@ class Init extends FlxState
 
 	public static var gameSettings:Map<String, Dynamic> = [
 		'Downscroll' => [
-			#if android true #else false #end,
+			false,
 			Checkmark,
 			'Whether to have the strumline vertically flipped in gameplay.',
 			NOT_FORCED
 		],
 		'Controller Mode' => [
-			false,
+			#if android true #else false #end,
 			Checkmark,
 			'Whether to use a controller instead of the keyboard to play.',
 			NOT_FORCED
